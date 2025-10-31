@@ -2,9 +2,6 @@ import { StyleSheet } from 'react-native';
 import { FONTS, SIZES, COLORS } from '../../constant';
 
 const styles = StyleSheet.create({
-  container: {
-    marginBottom: SIZES.height * 0.012,
-  },
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',

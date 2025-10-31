@@ -5,3 +5,6 @@ export { default as Otp } from './OTP';
 export { default as NewPassword } from './NewPassword';
 export { default as ChangePassword } from './ChangePassword';
 export { default as GetStarted } from './GetStarted';
+export { default as GenrePreference } from './GenrePreference';
+export { default as ArtistPreference } from './ArtistPreference';
+export { default as PodcastPreference } from './PodcastPreference';

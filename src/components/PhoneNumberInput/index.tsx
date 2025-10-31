@@ -65,7 +65,7 @@ const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({
         />
       </View>
 
-      <View style={[styles.verticalLine, { left: `${getMarginLeft()}%` }]} />
+      <View style={[{ left: `${getMarginLeft()}%` }]} />
 
       <View style={styles.arrowContainer}>
         <Image source={images.downArrow} style={styles.arrowImage} />

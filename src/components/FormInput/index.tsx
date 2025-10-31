@@ -62,14 +62,7 @@ const FormInput: React.FC<FormInputProps> = ({
   });
 
   return (
-    <Animated.View
-      style={[
-        styles.container,
-        {
-          transform: [{ scale: scaleAnim }],
-        },
-      ]}
-    >
+    <Animated.View style={[{ transform: [{ scale: scaleAnim }] }]}>
       <View
         style={[
           styles.inputWrapper,

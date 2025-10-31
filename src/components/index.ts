@@ -7,3 +7,5 @@ export { default as LogoContainer } from './LogoContainer';
 export { default as PhoneNumberInput } from './PhoneNumberInput';
 export { default as CustomStatusBar } from './StatusBar';
 export { default as Title } from './Title';
+export { default as SearchBar } from './SearchBar';
+export { default as SegmentedProgressBar } from './SegmentedProgressBar';

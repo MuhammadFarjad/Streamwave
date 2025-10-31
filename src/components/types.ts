@@ -85,3 +85,16 @@ export interface TitleProps {
   header: string;
   description: string;
 }
+
+export interface SearchBarProps {
+  // searchQuery: string;
+  // setSearchQuery: (text: string) => void;
+  placeholder?: string;
+  // placeholderTextColor?: string;
+  showFilter?: boolean;
+  onFilterPress?: () => void;
+  // searchIconSource: ImageSourcePropType;
+  // filterIconSource: ImageSourcePropType;
+  containerStyle?: StyleProp<ViewStyle>;
+  inputStyle?: StyleProp<TextStyle>;
+}

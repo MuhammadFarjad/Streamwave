@@ -18,6 +18,7 @@ import {
   PhoneNumberInput,
   Header,
   Loader,
+  SegmentedProgressBar,
   //   SocialsContainer,
   //   Title,
 } from '../../components';
@@ -30,6 +31,7 @@ import { RootStackParamList } from '../../navigation/types/RootStackParamList';
 import CheckBox from '@react-native-community/checkbox';
 import { signUpValidationSchema } from '../../utils/validations/auth.validations';
 import { useAuthDispatch, useAuthState } from '../../redux/Hook/authHooks';
+import * as Progress from 'react-native-progress';
 
 const SignUp: React.FC<SignInProps> = ({ route }) => {
   const width = SIZES.width * 0.9;
@@ -102,7 +104,12 @@ const SignUp: React.FC<SignInProps> = ({ route }) => {
   //   });
   // };
 
-  const handleContinue = () => {};
+  const handleContinue = () => {
+    navigate({
+      name: NavigationStrings.PREFERENCE_STACK as keyof RootStackParamList,
+      params: { screen: NavigationStrings.GENRE_PREFERENCE },
+    });
+  };
 
   const handleLogin = () => {
     navigate({ name: NavigationStrings.SIGN_IN as keyof RootStackParamList });
@@ -120,6 +127,8 @@ const SignUp: React.FC<SignInProps> = ({ route }) => {
         >
           <View>
             <Header title="Create an Account" background />
+            <SegmentedProgressBar step={1} totalSteps={4} />
+
             <View>
               <Formik
                 initialValues={{

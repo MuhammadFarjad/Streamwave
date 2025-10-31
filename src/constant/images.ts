@@ -9,6 +9,9 @@ const images = {
   apple: require('../assets/images/apple.png'),
   google: require('../assets/images/google.png'),
   downArrow: require('../assets/images/downArrow.png'),
+  search: require('../assets/images/search.png'),
+  dualipa: require('../assets/images/dualipa.png'),
+  podcast1: require('../assets/images/podcast1.png'),
 };
 
 export default images;

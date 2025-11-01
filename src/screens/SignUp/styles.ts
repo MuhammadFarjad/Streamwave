@@ -22,8 +22,8 @@ export default StyleSheet.create({
   inputText: {
     color: COLORS.white,
     ...FONTS.Bold20,
-    marginTop: 14,
-    marginBottom: 10,
+    marginTop: SIZES.height * 0.022,
+    marginBottom: SIZES.height * 0.015,
   },
   checkboxContainer: {
     alignItems: 'center',
@@ -34,7 +34,7 @@ export default StyleSheet.create({
     marginRight: SIZES.width * 0.02,
   },
   buttonCont: {
-    marginTop: SIZES.h20,
+    marginTop: SIZES.height * 0.06,
   },
   termsText: {
     ...FONTS.Medium14,
@@ -45,7 +45,7 @@ export default StyleSheet.create({
   signupContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: SIZES.h10,
+    marginTop: SIZES.height * 0.02,
   },
   signupLink: {
     color: COLORS.primary,
@@ -61,7 +61,7 @@ export default StyleSheet.create({
     ...FONTS.light12,
   },
   socialCont: {
-    marginTop: SIZES.h10,
+    marginTop: SIZES.height * 0.02,
   },
   textCont: {
     marginLeft: SIZES.width * 0.07,

@@ -98,3 +98,11 @@ export interface SearchBarProps {
   containerStyle?: StyleProp<ViewStyle>;
   inputStyle?: StyleProp<TextStyle>;
 }
+
+export interface albumCardardProps {
+  image: any;
+  title: any;
+  artist: string;
+  width?: number | string;
+  height?: number | string;
+}

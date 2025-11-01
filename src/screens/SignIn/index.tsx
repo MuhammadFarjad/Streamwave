@@ -104,7 +104,7 @@ const SignIn = () => {
       //     text2: 'You have successfully logged in!',
       //   });
       // navigate({
-      //     name: NavigationStrings.HOME_STACK as keyof RootStackParamList,
+      //     name: NavigationStrings.MUSIC_STACK as keyof RootStackParamList,
       //     params: { screen: NavigationStrings.HOME },
       // });
     } else if (error) {
@@ -130,7 +130,7 @@ const SignIn = () => {
     });
   };
 
-  const handleSignIn = () => {};
+  const handleSignIn = () => { };
 
   // const handleLogin = async (values: typeof initialValues) => {
   //     clearAuthError();
@@ -153,7 +153,7 @@ const SignIn = () => {
     //     params: { screen: NavigationStrings.HOME },
     // });
     // navigate({
-    //     name: NavigationStrings.HOME_STACK as keyof RootStackParamList,
+    //     name: NavigationStrings.MUSIC_STACK as keyof RootStackParamList,
     //     params: { screen: NavigationStrings.PREFERENCE },
     // });
   };

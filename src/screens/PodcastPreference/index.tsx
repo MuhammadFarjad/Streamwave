@@ -26,9 +26,15 @@ const PodcastPreference: React.FC<{ navigation: any }> = ({ navigation }) => {
     );
   };
 
-  const handleContinue = () => {};
+  const handleContinue = () => {
+    navigation.navigate(NavigationStrings.BOTTOM_STACK);
 
-  const onSkipPress = () => {};
+  };
+
+  const onSkipPress = () => {
+    navigation.navigate(NavigationStrings.BOTTOM_STACK);
+
+  };
 
   return (
     <Container style={styles.background}>

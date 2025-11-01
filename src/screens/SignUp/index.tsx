@@ -99,7 +99,7 @@ const SignUp: React.FC<SignInProps> = ({ route }) => {
 
   // const handleSignIn = () => {
   //   navigate({
-  //     name: NavigationStrings.HOME_STACK as keyof RootStackParamList,
+  //     name: NavigationStrings.MUSIC_STACK as keyof RootStackParamList,
   //     params: { screen: NavigationStrings.PREFERENCE },
   //   });
   // };
@@ -202,7 +202,7 @@ const SignUp: React.FC<SignInProps> = ({ route }) => {
                         <PhoneNumberInput
                           values={values}
                           setFieldValue={setFieldValue}
-                          // error={touched.phoneNumber && errors.phoneNumber}
+                        // error={touched.phoneNumber && errors.phoneNumber}
                         />
                         {touched.phone_number && errors.phone_number && (
                           <Text style={styles.errorText}>

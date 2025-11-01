@@ -9,3 +9,5 @@ export { default as CustomStatusBar } from './StatusBar';
 export { default as Title } from './Title';
 export { default as SearchBar } from './SearchBar';
 export { default as SegmentedProgressBar } from './SegmentedProgressBar';
+export { default as ProfileHeader } from './ProfileHeader';
+export { default as AlbumCard } from './AlbumCard';

@@ -12,6 +12,16 @@ const images = {
   search: require('../assets/images/search.png'),
   dualipa: require('../assets/images/dualipa.png'),
   podcast1: require('../assets/images/podcast1.png'),
+  notification: require('../assets/images/notification.png'),
+  profile: require('../assets/images/profile.png'),
+  boxes: require('../assets/images/boxes.png'),
+  music: require('../assets/images/music.png'),
+  podcast: require('../assets/images/podcast.png'),
+  radio: require('../assets/images/radio.png'),
+  audiobooks: require('../assets/images/audiobooks.png'),
+  news: require('../assets/images/news.png'),
+  album1: require('../assets/images/album1.png'),
+  album2: require('../assets/images/album2.png'),
 };
 
 export default images;

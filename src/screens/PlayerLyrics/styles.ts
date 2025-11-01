@@ -12,7 +12,7 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'transparent',
-    marginTop: SIZES.height * 0.02,
+    marginTop: 20,
   },
   text1: {
     color: COLORS.white,
@@ -26,7 +26,7 @@ export default StyleSheet.create({
     ...FONTS.light13,
   },
   btnCont: {
-    marginTop: SIZES.height * 0.02,
+    marginTop: 10,
   },
   button: {
     marginTop: 7,
@@ -42,15 +42,15 @@ export default StyleSheet.create({
     backgroundColor: COLORS.black,
   },
   icon: {
-    width: SIZES.width * 0.05,
-    height: SIZES.height * 0.029,
+    width: 15,
+    height: 15,
     resizeMode: 'contain',
     marginLeft: 60,
   },
   buttonText: {
     color: COLORS.white,
     ...FONTS.Regular15,
-    marginLeft: SIZES.width * 0.05,
+    marginLeft: 30,
     flex: 1,
   },
 });

@@ -103,6 +103,23 @@ export interface albumCardardProps {
   image: any;
   title: any;
   artist: string;
-  width?: number | string;
-  height?: number | string;
+  width?: any;
+  height?: any;
+}
+
+export interface ArtistCardProps {
+  id: number;
+  title: string;
+  image: ImageSourcePropType;
+  isSelected?: boolean;
+  onPress?: (id: number) => void;
+  selectable?: boolean;
+  large?: boolean;
+}
+
+export interface songCardProps {
+  image: any;
+  title: string;
+  artist: string;
+  length: string;
 }

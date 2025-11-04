@@ -9,11 +9,12 @@ import {
   Container,
   SegmentedProgressBar,
 } from '../../components';
-import { artistConfig } from '../../config/index';
+import { artistConfig } from '../../config';
 import { Text } from 'react-native-gesture-handler';
 import { navigate } from '../../navigation/Stack/NavigationRef';
 import NavigationStrings from '../../navigation/NavigationStrings';
 import { RootStackParamList } from '../../navigation/types/RootStackParamList';
+import ArtistCard from '../../components/ArtistCard';
 
 const ArtistPreference: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [selectedGenres, setSelectedGenres] = useState<number[]>([]); // store selected IDs
@@ -55,27 +56,16 @@ const ArtistPreference: React.FC<{ navigation: any }> = ({ navigation }) => {
           contentContainerStyle={styles.cardsCont}
           data={artistConfig}
           keyExtractor={item => item.id.toString()}
-          renderItem={({ item }) => {
-            const isSelected = selectedGenres.includes(item.id);
-            return (
-              <TouchableOpacity
-                style={[styles.artistCont]}
-                onPress={() => toggleSelection(item.id)}
-              >
-                <Image
-                  source={images.dualipa}
-                  style={[
-                    styles.artistImg,
-                    {
-                      borderWidth: isSelected ? 2 : 2,
-                      borderColor: isSelected ? COLORS.primary : 'transparent',
-                    },
-                  ]}
-                />
-                <Text style={styles.artistText}>{item.title}</Text>
-              </TouchableOpacity>
-            );
-          }}
+          renderItem={({ item }) => (
+            <ArtistCard
+              id={item.id}
+              large
+              title={item.title}
+              image={item.image}
+              isSelected={selectedGenres.includes(item.id)}
+              onPress={toggleSelection}
+            />
+          )}
         />
       </View>
 

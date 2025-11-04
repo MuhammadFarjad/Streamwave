@@ -8,6 +8,7 @@ import {
   SearchBar,
   Container,
   SegmentedProgressBar,
+  PodcastCard,
 } from '../../components';
 import { podcastConfig } from '../../config/index';
 import { navigate } from '../../navigation/Stack/NavigationRef';
@@ -55,31 +56,19 @@ const PodcastPreference: React.FC<{ navigation: any }> = ({ navigation }) => {
           <FlatList
             contentContainerStyle={styles.cardsCont}
             data={podcastConfig}
-            keyExtractor={item => item.id.toString()}
-            renderItem={({ item }) => {
-              const isSelected = selectedGenres.includes(item.id);
-              return (
-                <TouchableOpacity
-                  style={[styles.podcastCont]}
-                  onPress={() => toggleSelection(item.id)}
-                >
-                  <Image
-                    source={images.podcast1}
-                    style={[
-                      styles.podcastImg,
-                      {
-                        borderWidth: isSelected ? 2 : 2,
-                        borderColor: isSelected
-                          ? COLORS.primary
-                          : 'transparent',
-                      },
-                    ]}
-                  />
-                  <Text style={styles.podcastText}>{item.title}</Text>
-                  <Text style={styles.podcasttype}>{item.type}</Text>
-                </TouchableOpacity>
-              );
-            }}
+            numColumns={3} // <-- handles 2 columns layout
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => (
+              <PodcastCard
+                id={item.id}
+                title={item.title}
+                type={item.type}
+                image={item.image || images.podcast1} // fallback image
+                isSelected={selectedGenres.includes(item.id)}
+                onPress={toggleSelection}
+              />
+            )}
+            showsVerticalScrollIndicator={false}
           />
         </View>
       </View>

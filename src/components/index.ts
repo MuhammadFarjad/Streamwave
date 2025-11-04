@@ -11,3 +11,6 @@ export { default as SearchBar } from './SearchBar';
 export { default as SegmentedProgressBar } from './SegmentedProgressBar';
 export { default as ProfileHeader } from './ProfileHeader';
 export { default as AlbumCard } from './AlbumCard';
+export { default as ArtistCard } from './ArtistCard';
+export { default as PodcastCard } from './PodcastCard';
+export { default as SongCard } from './SongCard';

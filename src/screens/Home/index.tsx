@@ -3,68 +3,100 @@ import {
   View,
   Text,
   FlatList,
-  ScrollView,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
-import { Container, ProfileHeader, AlbumCard } from '../../components';
-import { COLORS, images } from '../../constant';
+import { Container, ProfileHeader, AlbumCard, ArtistCard, SongCard } from '../../components';
+import { COLORS } from '../../constant';
 import styles from './styles';
+import { albumConfig, artistConfig, songCardConfig } from '../../config';
 
 const Home: React.FC = () => {
   const [selectedId, setSelectedId] = useState('1');
-
-  const albums = [
-    { id: '1', title: 'After Hours', artist: 'The Weeknd', image: images.album1 },
-    { id: '2', title: 'Scorpion', artist: 'Drake', image: images.album2 },
-    { id: '3', title: 'Divide', artist: 'Ed Sheeran', image: images.album1 },
-    { id: '4', title: '1989', artist: 'Taylor Swift', image: images.album2 },
-  ];
 
   const handleProfileClick = () => {
     // navigate(NavigationStrings.PROFILE);
   };
 
-  const renderAlbum = ({ item }: { item: typeof albums[0] }) => {
-    const isSelected = item.id === selectedId;
-    return (
-      <TouchableOpacity onPress={() => setSelectedId(item.id)}>
-        <AlbumCard
-          image={item.image}
-          title={item.title}
-          artist={item.artist}
-        />
-      </TouchableOpacity>
-    );
-  };
+  const renderAlbum = ({ item }: { item: typeof albumConfig[0] }) => (
+    <AlbumCard
+      image={item.image}
+      title={item.title}
+      artist={item.artist}
+    />
+  );
+
+  const renderArtist = ({ item }: { item: typeof artistConfig[0] }) => (
+    <ArtistCard
+      id={item.id}
+      title={item.title}
+      image={item.image}
+      selectable={false}
+    />
+  );
 
   return (
     <Container style={styles.Container}>
-      <ProfileHeader />
-      <View style={styles.contentCont}>
-        <Text style={styles.titleCont}>Trending Now</Text>
-        <TouchableOpacity>
-          <Text style={[styles.titleCont, { color: COLORS.primary }]}>
-            View All
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.listCont}>
-        <FlatList
-          data={albums}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => item.id}
-          renderItem={renderAlbum}
-        />
-      </View>
-      <View style={styles.contentCont}>
-        <Text style={styles.titleCont}>Top Artist</Text>
-        <TouchableOpacity>
-          <Text style={[styles.titleCont, { color: COLORS.primary }]}>
-            View All
-          </Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView>
+        <ProfileHeader />
+        <View style={styles.contentCont}>
+          <Text style={styles.titleCont}>Trending Now</Text>
+          <TouchableOpacity>
+            <Text style={[styles.titleCont, { color: COLORS.primary }]}>
+              View All
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.listCont}>
+          <FlatList
+            data={albumConfig}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={renderAlbum}
+          />
+        </View>
+        <View style={styles.contentCont}>
+          <Text style={styles.titleCont}>Top Artist</Text>
+          <TouchableOpacity>
+            <Text style={[styles.titleCont, { color: COLORS.primary }]}>
+              View All
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.listCont}>
+          <FlatList
+            data={artistConfig}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={renderArtist}
+            contentContainerStyle={{ paddingRight: 10 }}
+          />
+        </View>
+        <View style={styles.contentCont}>
+          <Text style={styles.titleCont}>Recommendation</Text>
+          <TouchableOpacity>
+            <Text style={[styles.titleCont, { color: COLORS.primary }]}>
+              View All
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.cardCont}>
+          <FlatList
+            data={songCardConfig}
+            keyExtractor={(index) => index.toString()}
+            renderItem={({ item }) => (
+              <SongCard
+                title={item.title}
+                image={item.image}
+                artist={item.artist}
+                length={item.length}
+              />
+            )}
+          />
+        </View></ScrollView>
     </Container>
   );
 };

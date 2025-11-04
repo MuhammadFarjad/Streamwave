@@ -55,12 +55,11 @@ export default StyleSheet.create({
   },
   titleCont: {
     paddingLeft: SIZES.width * 0.03,
-    paddingTop: SIZES.height * 0.02,
     ...FONTS.Bold16,
     color: COLORS.white,
   },
   listCont: {
-    width: SIZES.width * 0.93,
+    width: SIZES.width * 0.9,
     alignSelf: 'center',
   },
   cardCont: {
